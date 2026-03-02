@@ -1,7 +1,13 @@
 # cli_tool.py
 
 import argparse
-from models import Task, User
+import sys
+
+# Handle both direct execution and module execution
+try:
+    from .models import Task, User
+except ImportError:
+    from models import Task, User
 
 # Global dictionary to store users and their tasks
 users = {}
